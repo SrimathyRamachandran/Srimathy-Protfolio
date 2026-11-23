@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Srimathy Ramachandran | Bioinformatics & Computational Genomics</title>
+<meta name="description" content="PhD scholar studying genomic determinants of antimicrobial resistance using large-scale genomics, data analytics and machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --ink:#12232b; --muted:#4f6670; --line:#d6dfe3;
+  --accent:#0b6f78; --accent-ink:#ffffff;
+  --nA:#2e9d5b; --nC:#2f6fd0; --nG:#c98a00; --nT:#c8432f;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1a20; --surface:#14252d; --ink:#e6eef1; --muted:#9db3bc; --line:#26414c;
+    --accent:#4fc1cb; --accent-ink:#0e1a20;
+    --nA:#5fd08a; --nC:#6fa3f0; --nG:#e8b43a; --nT:#ee7b67;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1a20; --surface:#14252d; --ink:#e6eef1; --muted:#9db3bc; --line:#26414c;
+  --accent:#4fc1cb; --accent-ink:#0e1a20;
+  --nA:#5fd08a; --nC:#6fa3f0; --nG:#e8b43a; --nT:#ee7b67;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;margin:0}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{padding:48px 0 36px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:168px 1fr;gap:32px;align-items:center}
+.photo{width:168px;height:168px;border-radius:50%;background:var(--surface);border:2px solid var(--line);display:grid;place-items:center;overflow:hidden;font:600 52px "Source Serif 4",Georgia,serif;color:var(--accent)}
+.photo img{width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(2rem,6vw,3.1rem);letter-spacing:-.01em}
+.role{margin:8px 0 2px;font-size:1.1rem;font-weight:500}
+.affil{margin:0;color:var(--muted)}
+.motif{margin:24px 0 0;display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.box{display:flex;flex-direction:column;gap:4px}
+.box .lbl{font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+.seq{display:flex;gap:3px}
+.seq span{width:22px;height:26px;display:grid;place-items:center;border-radius:3px;font:600 .85rem/1 ui-monospace,Menlo,Consolas,monospace;color:#fff}
+.seq .A{background:var(--nA)}.seq .C{background:var(--nC)}.seq .G{background:var(--nG)}.seq .T{background:var(--nT)}
+:root[data-theme="dark"] .seq span,
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seq span{color:#0e1a20}}
+.gap{flex:1;min-width:40px;height:2px;background:var(--line);margin-bottom:12px;position:relative}
+.cap{margin:10px 0 0;font-size:.82rem;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;padding:9px 16px;border-radius:6px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:500;font-size:.95rem}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(1.08)}
+
+/* sections */
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;white-space:nowrap;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500}
+nav a:hover{color:var(--accent)}
+section{padding:40px 0 4px}
+h2{font-size:1.55rem;margin-bottom:16px}
+p{margin:0 0 12px;max-width:68ch}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.item{padding:14px 0;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0;padding-top:0}
+.item h3{font-size:1.08rem}
+.meta{color:var(--muted);font-size:.9rem;margin:2px 0 6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{background:var(--surface);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.9rem}
+.pub{padding:14px 0;border-top:1px solid var(--line)}
+.pub:first-of-type{border-top:0;padding-top:0}
+.pub .t{font-weight:500;margin:0 0 3px}
+.pub .j{margin:0;color:var(--muted);font-size:.93rem}
+.pub .a{margin:0 0 3px;font-size:.93rem}
+.pub b{font-weight:600;color:var(--ink)}
+.status{display:inline-block;font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);margin-bottom:6px}
+ul.plain{margin:0;padding-left:20px}
+ul.plain li{margin-bottom:8px;max-width:70ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+footer{margin-top:48px;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:680px){
+  .hero{padding-top:32px}
+  .hero-grid{grid-template-columns:1fr;justify-items:start;gap:20px}
+  .photo{width:120px;height:120px;font-size:38px}
+  .two{grid-template-columns:1fr}
+  .seq span{width:18px;height:22px;font-size:.75rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="photo" id="photo" aria-label="Photo of Srimathy Ramachandran">SR</div>
+    <div>
+      <h1>Srimathy Ramachandran</h1>
+      <p class="role">PhD Research Scholar in Bioinformatics and Computational Genomics</p>
+      <p class="affil">SASTRA Deemed to be University, Thanjavur, India</p>
+
+      <div class="links">
+        <a class="btn primary" href="mailto:dpfi0123011689@sastra.ac.in">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/srimathy-ramachandran-9a7131170/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/SrimathyRamachandran" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a href="#about">About</a><a href="#publications">Publications</a><a href="#presentations">Presentations</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#awards">Awards</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="about">
+  <h2>About</h2>
+  <p>I study the genomic determinants of antimicrobial resistance (AMR) in bacteria, including coding regions, regulatory elements and plasmids. My work combines large-scale genomic analysis, data analytics and machine learning to understand how resistance evolves and spreads.</p>
+  <p>My PhD thesis is titled <em>Computational Approaches and Data Analytics for Exploring Antimicrobial Resistance Determinants in Bacterial Coding Regions, Regulatory Elements, and Plasmids</em>, supervised by Dr. S. Suma Mohan.</p>
+</section>
+
+<section id="research">
+  <h2>Research interests</h2>
+  <ul class="tags">
+    <li>AMR genomics</li><li>Bacterial promoters and gene regulation</li><li>Mobile genetic elements</li><li>Comparative genomics</li><li>Machine learning and deep learning</li><li>Sequence analytics</li><li>Generative AI</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Current projects</h2>
+  <div class="two">
+    <div class="card"><h3>Plasmid evolution in <em>Klebsiella pneumoniae</em></h3><p class="meta">Assembly and comparative evolutionary analysis</p></div>
+    <div class="card"><h3>DNA transposon families</h3><p class="meta">Machine-learning-based detection and classification</p></div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+
+  <div class="pub">
+    <span class="status">Under review</span>
+    <p class="t">Regulatory evolution of TEM β-lactamases through large-scale genomic analysis reveals promoter diversity and its impact on β-lactam resistance in <em>Escherichia coli</em></p>
+    <p class="a"><b>Ramachandran S</b>, Chandran SA, Mohan SS</p>
+    <p class="j">Scientific Reports, 2026</p>
+  </div>
+
+  <div class="pub">
+    <p class="t">Comparative genomic analysis of hypervirulent and classical <em>Klebsiella pneumoniae</em> isolates from respiratory samples: a computational assessment of virulence genes</p>
+    <p class="a">Thirugnanasambantham MK, <b>Ramachandran S</b>, et al.</p>
+    <p class="j">Functional &amp; Integrative Genomics, 2026, 26:87 · <a href="https://doi.org/10.1007/s10142-026-01869-1" target="_blank" rel="noopener">doi:10.1007/s10142-026-01869-1</a></p>
+  </div>
+
+  <div class="pub">
+    <p class="t">The systemic anti-diabetic effect of polyherbal formulation Varanadi Kashayam is mediated through GLP-1 secretion and DPP4 inhibition</p>
+    <p class="a">Thottappillil A, et al.</p>
+    <p class="j">Journal of Ayurveda and Integrative Medicine, 2026, 17(4):101359 · <a href="https://doi.org/10.1016/j.jaim.2026.101359" target="_blank" rel="noopener">doi:10.1016/j.jaim.2026.101359</a></p>
+  </div>
+
+  <div class="pub">
+    <p class="t">Exploring the evolution of multidrug resistance patterns in ESKAPEE pathogens using association mining: key to antibiotic stewardship?</p>
+    <p class="a">Rajendran S, <b>Ramachandran S</b>, et al.</p>
+    <p class="j">Wellcome Open Research, 2025, 10:461 · <a href="https://doi.org/10.12688/wellcomeopenres.24103.3" target="_blank" rel="noopener">doi:10.12688/wellcomeopenres.24103.3</a></p>
+  </div>
+
+  <div class="pub">
+    <p class="t">Unveiling meropenem resistance and co-resistance patterns in <em>Klebsiella pneumoniae</em> and <em>Acinetobacter baumannii</em>: a global genome analysis using ML/DL and association mining</p>
+    <p class="a"><b>Ramachandran S</b>, et al.</p>
+    <p class="j">BMC Microbiology, 2025, 25:699 · <a href="https://doi.org/10.1186/s12866-025-04394-6" target="_blank" rel="noopener">doi:10.1186/s12866-025-04394-6</a></p>
+  </div>
+
+  <div class="pub">
+    <p class="t">Synthesis, in vitro and structural aspects of benzothiazole analogs as anti-oxidants and potential neuroprotective agents</p>
+    <p class="a">Ramaiah MJ, et al.</p>
+    <p class="j">Environmental Toxicology and Pharmacology, 2020, 79:103415 · <a href="https://doi.org/10.1016/j.etap.2020.103415" target="_blank" rel="noopener">doi:10.1016/j.etap.2020.103415</a></p>
+  </div>
+
+  <div class="pub">
+    <p class="t">Host transcriptome-guided drug repurposing for COVID-19 treatment: a meta-analysis based approach</p>
+    <p class="a">Loganathan T, <b>Ramachandran S</b>, et al.</p>
+    <p class="j">PeerJ, 2020, 8:e9357</p>
+  </div>
+
+  <div class="pub">
+    <p class="t">Construction of the gene regulatory network identifies MYC as a transcriptional regulator of SWI/SNF complex</p>
+    <p class="a">Srikanth S, <b>Ramachandran S</b>, Mohan SS</p>
+    <p class="j">Scientific Reports, 2020, 10:158</p>
+  </div>
+</section>
+
+<section id="presentations">
+  <h2>Research presentations</h2>
+  <div class="item">
+    <h3>Flash talk: meropenem resistance and co-resistance patterns</h3>
+    <p class="meta">Genome Informatics Across Scales, NCBS–inStem, Bengaluru · April 2025</p>
+  </div>
+  <div class="item">
+    <h3>Poster: molecular mechanisms behind porin alterations in <em>Klebsiella pneumoniae</em></h3>
+    <p class="meta">Big Data Algorithms for Biology, IISc Bengaluru · May 2025</p>
+  </div>
+  <div class="item">
+    <h3>Poster: genomic determinants of meropenem resistance in <em>K. pneumoniae</em> and <em>A. baumannii</em></h3>
+    <p class="meta">Big Data Algorithms for Biology, IISc Bengaluru · May–June 2024</p>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="item">
+    <h3>Research Scholar and Project Associate I</h3>
+    <p class="meta">SASTRA Deemed to be University · 2023 to present</p>
+    <p>Computational study of AMR-associated genomic determinants and regulatory architecture. Previously Teaching Assistant (June to September 2023).</p>
+  </div>
+  <div class="item">
+    <h3>Programmer Analyst and Software Engineer</h3>
+    <p class="meta">Cognizant Technology Solutions · 2020 to 2023</p>
+    <p>Supported business-requirements analysis, budget proposals and project deliverables.</p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="item">
+    <h3>PhD in Bioinformatics (ongoing)</h3>
+    <p class="meta">SASTRA Deemed University · 2023 to present · Supervisor: Dr. S. Suma Mohan</p>
+  </div>
+  <div class="item">
+    <h3>Master of Data Science (Global)</h3>
+    <p class="meta">Deakin University, Australia · 2022 to 2024 · 81%</p>
+  </div>
+  <div class="item">
+    <h3>B.Tech in Bioinformatics</h3>
+    <p class="meta">SASTRA Deemed University · 2016 to 2020 · 75.31%</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical skills</h2>
+  <ul class="tags">
+    <li>Python</li><li>R</li><li>SQL</li><li>Data visualisation</li><li>PyTorch (basic)</li><li>TensorFlow (basic)</li>
+  </ul>
+</section>
+
+<section id="awards">
+  <h2>Awards and recognition</h2>
+  <ul class="plain">
+    <li>Finalist, Vivli AMR Surveillance Data Challenge (2024)</li>
+    <li>First place, Best Poster Presentation, International Conference on Synergy of Sciences, SASTRA (2020)</li>
+  </ul>
+</section>
+
+<section id="training">
+  <h2>Training and academic activities</h2>
+  <ul class="plain">
+    <li>Generative and Agentic AI Faculty Development Programme, SASTRA (June 2026)</li>
+    <li>UK–India programme on AI-Enabled Healthcare (May 2026)</li>
+    <li>Hands-on training in Microbial Model Systems for Molecular Research, IBAB Bengaluru (September 2025)</li>
+    <li>Organising team, ML Approaches in Bacterial Genomics Workshop, DBT–BIC SASTRA (August 2025)</li>
+    <li>Statistical Genomics Workshop, NCBS Bengaluru (September 2024)</li>
+    <li>Organising team, Computer-Aided Drug Design Workshop (December 2024)</li>
+    <li>Organised and conducted the Protein Structure Prediction and Modelling Workshop, SASTRA (February 2024)</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>I am glad to talk about AMR genomics, bacterial regulation and machine learning in genomics.</p>
+  <div class="links">
+    <a class="btn primary" href="mailto:dpfi0123011689@sastra.ac.in">dpfi0123011689@sastra.ac.in</a>
+    <a class="btn" href="https://www.linkedin.com/in/srimathy-ramachandran-9a7131170/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/SrimathyRamachandran" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Srimathy Ramachandran · SASTRA Deemed to be University, Thanjavur, India</div>
+</footer>
+
+</body>
+</html>
